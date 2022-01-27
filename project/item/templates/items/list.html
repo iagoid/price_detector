@@ -12,17 +12,17 @@
             text-decoration: none;
         }
 
-        .leaderboard__profiles {
+        
+        .leaderboard__products {
             margin: 25px 0;
             max-width: 80vw;
             background-color: #fff;
-            border-radius: 0 0 12px 12px;
-            padding: 15px 15px 20px;
+            border-radius: 12px;
             display: grid;
             row-gap: 8px;
         }
 
-        .leaderboard__profile {
+        .leaderboard__product {
             display: grid;
             grid-template-columns: 1fr 3fr 1fr;
             align-items: center;
@@ -35,12 +35,12 @@
             background-color: #fff;
         }
 
-        .leaderboard__profile:hover {
+        .leaderboard__product:hover {
             transform: scale(1.2);
             box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
         }
 
-        .leaderboard__picture {
+        .leaderboard__image {
             max-width: 100%;
             width: 100px;
             border-radius: 50%;
@@ -53,18 +53,15 @@
             font-size: 18px;
         }
 
-        .leaderboard__value {
+        .leaderboard__price {
             color: #35d8ac;
             font-weight: 700;
             font-size: 34px;
             text-align: right;
         }
 
-        .leaderboard__value>span {
-            opacity: 0.8;
-            font-weight: 600;
-            font-size: 13px;
-            margin-left: 3px;
+        .unavailable {
+            color: #d83535;
         }
 
         body {
@@ -81,14 +78,24 @@
 </head>
 
 <body>
-    <main class="leaderboard__profiles">
+    <main class="leaderboard__products">
         {% for item in items %}
         <a href="{{ item.link }}" target="_blank">
-            <article class="leaderboard__profile">
+            <article class="leaderboard__product">
                 <img src="{{ item.image }}" alt="{{ item.name }}"
-                    class="leaderboard__picture">
+                    class="leaderboard__image">
                 <span class="leaderboard__name">{{ item.name }}</span>
-                <span class="leaderboard__value">R$: {{ item.price|floatformat:-2 }}</span>
+                <span class="leaderboard__price">R$: {{ item.price|floatformat:-2 }}</span>
+            </article>
+        </a>
+        {% endfor %}
+        {% for item in unavailableItems %}
+        <a href="{{ item.link }}" target="_blank">
+            <article class="leaderboard__product">
+                <img src="{{ item.image }}" alt="{{ item.name }}"
+                    class="leaderboard__image">
+                <span class="leaderboard__name unavailable">{{ item.name }}</span>
+                <span class="leaderboard__price unavailable">R$: {{ item.price|floatformat:-2 }}</span>
             </article>
         </a>
         {% endfor %}

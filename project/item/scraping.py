@@ -28,7 +28,7 @@ def verifyItemsToScraping():
             
 
             items[i].save()
-            time.sleep(1)
+            time.sleep(3)
 
         else:
             return
@@ -62,9 +62,7 @@ def scrapingKabum(soup, item):
             return name, image, price
         
         except:
-            soup.find('div', attrs={'id': 'formularioProdutoIndisponivel'})
-            name = "Produto indisponivel"
-            
+            soup.find('div', attrs={'id': 'formularioProdutoIndisponivel'})            
             return "Indisponível: "+ name, image, 0
 
     except:
