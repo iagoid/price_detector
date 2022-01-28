@@ -1,5 +1,13 @@
 {% include "head.html" %}
 
+<div >
+    <form method="POST" id="form__create">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="submit" value="Inserir">
+    </form>
+</div>
+
 <main class="leaderboard__products">
     {% for item in items %}
     <a href="{{ item.link }}" target="_blank">

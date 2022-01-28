@@ -8,11 +8,54 @@ body {
     background-color: #eaeaea;
     display: grid;
     place-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+input,
+p {
     font-family: 'Source Sans Pro', sans-serif;
+    color: #221e1e;
+
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 a {
     text-decoration: none;
+}
+
+#form__create {
+    margin-top: 15px;
+    display: grid;
+    width: 80vw;
+    grid-template-columns: 18fr 4fr;
+    gap: 15px;
+}
+
+#form__create input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 28px;
+    font-weight: 700;
+    height: 60px;
+}
+
+#form__create input.submit {
+    background-color: #35d8ac;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#form__create input.submit:hover {
+    transform: scale(1.1);
 }
 
 

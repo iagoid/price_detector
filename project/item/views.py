@@ -1,19 +1,33 @@
 import schedule
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from item.forms import ItemForm
 
 from .models import Item
 from .scraping import verifyItemsToScraping
 
 
 def itemsList(request):
-    verifyItemsToScraping()
+    if request.method == 'POST':
+        form = ItemForm(request.POST)
 
-    items = Item.objects.exclude(price=0).order_by('price')
-    unavailableItems  = Item.objects.filter(price=0)
+        if form.is_valid():
+            task = form.save(commit = False)
+            task.save()
+            return redirect('/') 
 
-    context = {
-        'items': items,
-        'unavailableItems': unavailableItems,
-        }
+    else :
+        verifyItemsToScraping()
 
-    return render(request, 'items/list.html', context)
+        items = Item.objects.exclude(price=0).order_by('price')
+        unavailableItems  = Item.objects.filter(price=0)
+
+        form = ItemForm
+
+        context = {
+            'items': items,
+            'unavailableItems': unavailableItems,
+            'form': form,
+            }
+
+        return render(request, 'items/list.html', context)
