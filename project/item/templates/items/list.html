@@ -1,6 +1,6 @@
 {% include "head.html" %}
 
-<div >
+<div>
     <form method="POST" id="form__create">
         {% csrf_token %}
         {{ form.as_p }}
@@ -10,8 +10,8 @@
 
 <main class="leaderboard__products">
     {% for item in items %}
-    <a href="{{ item.link }}" target="_blank">
-        <article class="leaderboard__product">
+    <a class="link__item" href="{{ item.link }}" target="_blank" data-link="{{ item.id }}">
+        <article class="leaderboard__product" data-id="{{ item.id }}">
             <img src="{{ item.image }}" alt="{{ item.name }}" class="leaderboard__image">
             <span class="leaderboard__name">{{ item.name }}</span>
             <span class="leaderboard__price">R$: {{ item.price|floatformat:-2 }}</span>
@@ -19,7 +19,7 @@
     </a>
     {% endfor %}
     {% for item in unavailableItems %}
-    <a href="{{ item.link }}" target="_blank">
+    <a class="link__item" href="{{ item.link }}" target="_blank">
         <article class="leaderboard__product unavailable">
             <img src="{{ item.image }}" alt="{{ item.name }}" class="leaderboard__image unavailable">
             <span class="leaderboard__name unavailable">{{ item.name }}</span>
@@ -27,5 +27,4 @@
     </a>
     {% endfor %}
 </main>
-
 {% include "footer.html" %}
