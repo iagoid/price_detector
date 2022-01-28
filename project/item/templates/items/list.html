@@ -1,38 +1,23 @@
-{% load static %}
+{% include "head.html" %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
+<main class="leaderboard__products">
+    {% for item in items %}
+    <a href="{{ item.link }}" target="_blank">
+        <article class="leaderboard__product">
+            <img src="{{ item.image }}" alt="{{ item.name }}" class="leaderboard__image">
+            <span class="leaderboard__name">{{ item.name }}</span>
+            <span class="leaderboard__price">R$: {{ item.price|floatformat:-2 }}</span>
+        </article>
+    </a>
+    {% endfor %}
+    {% for item in unavailableItems %}
+    <a href="{{ item.link }}" target="_blank">
+        <article class="leaderboard__product unavailable">
+            <img src="{{ item.image }}" alt="{{ item.name }}" class="leaderboard__image unavailable">
+            <span class="leaderboard__name unavailable">{{ item.name }}</span>
+        </article>
+    </a>
+    {% endfor %}
+</main>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitor de Preços</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'items/style.css' %}">
-
-</head>
-
-<body>
-    <main class="leaderboard__products">
-        {% for item in items %}
-        <a href="{{ item.link }}" target="_blank">
-            <article class="leaderboard__product">
-                <img src="{{ item.image }}" alt="{{ item.name }}"
-                    class="leaderboard__image">
-                <span class="leaderboard__name">{{ item.name }}</span>
-                <span class="leaderboard__price">R$: {{ item.price|floatformat:-2 }}</span>
-            </article>
-        </a>
-        {% endfor %}
-        {% for item in unavailableItems %}
-        <a href="{{ item.link }}" target="_blank">
-            <article class="leaderboard__product unavailable">
-                <img src="{{ item.image }}" alt="{{ item.name }}"
-                    class="leaderboard__image unavailable">
-                <span class="leaderboard__name unavailable">{{ item.name }}</span>
-            </article>
-        </a>
-        {% endfor %}
-    </main>
-</body>
-</html>
+{% include "footer.html" %}
