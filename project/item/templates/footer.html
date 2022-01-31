@@ -3,7 +3,7 @@
 <div id="contextMenu" class="context-menu" style="display: none">
     <ul class="menu">
         <li class="trash">
-            <h3><i class="fa fa-trash" aria-hidden="true"></i> Delete</h3>
+            <a href="" id="delete__link"><h3><i class="fa fa-trash" aria-hidden="true"></i> Delete</h3></a>
         </li>
     </ul>
 </div>
@@ -12,51 +12,6 @@
 </body>
 
 <script src="{% static 'items/jquery-3.6.0.min.js' %}"></script>
-
-
-<script>
-    document.onclick = hideMenu;
-    document.oncontextmenu = rightClick;
-
-    function hideMenu() {
-        document.getElementById("contextMenu")
-            .style.display = "none"
-
-
-    }
-
-    function rightClick(e) {
-        var x = event.clientX
-        var y = event.clientY
-        var elementMouseIsOver = document.elementFromPoint(x, y);
-        var parent = $(elementMouseIsOver).prev('article')
-        console.log(parent)
-
-        var id = parent.dataset.id
-
-        console.log(id)
-
-        // var id = parent.dataset.link
-
-        if (id) {
-            e.preventDefault();
-
-            if (document.getElementById("contextMenu").style.display == "block") {
-                hideMenu();
-            } else {
-                var menu = document.getElementById("contextMenu")
-                menu.style.display = 'block';
-                menu.style.left = e.pageX + "px";
-                menu.style.top = e.pageY + "px";
-            }
-        }
-        // var divItem = $elementMouseIsOver.prev(".item")
-        // console.log(divItem)
-        // console.dir(divItem)
-
-        // console.log(e)
-
-    }
-</script>
+<script src="{% static 'items/scripts.js' %}"></script>
 
 </html>

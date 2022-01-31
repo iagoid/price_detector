@@ -1,6 +1,5 @@
-import schedule
-from django.shortcuts import redirect, render
-
+from django.shortcuts import get_object_or_404, redirect, render
+from django.contrib import messages
 from item.forms import ItemForm
 
 from .models import Item
@@ -31,3 +30,11 @@ def itemsList(request):
             }
 
         return render(request, 'items/list.html', context)
+
+def deleteItem(request, id):
+    task = get_object_or_404(Item, pk=id)
+    task.delete()
+
+    messages.info(request, 'Tarefa deletada com sucesso.')
+
+    return redirect('/')
