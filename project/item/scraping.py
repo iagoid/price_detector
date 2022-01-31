@@ -6,6 +6,7 @@ from .models import Item
 import time
 
 def verifyItemsToScraping():
+    print("============")
     items = Item.objects.all().order_by(
         'updated_at')
 
