@@ -14,7 +14,7 @@
         <article class="leaderboard__product" data-identifier="{{ item.id }}">
             <img src="{{ item.image }}" alt="{{ item.name }}" class="leaderboard__image">
             <span class="leaderboard__name">{{ item.name }}</span>
-            <span class="leaderboard__price">R$: {{ item.price|floatformat:-2 }}</span>
+            <span class="leaderboard__price">R$: {{ item.price|floatformat:2 }}</span>
         </article>
     </a>
     {% endfor %}
