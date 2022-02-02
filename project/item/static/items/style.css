@@ -86,6 +86,9 @@ a {
     cursor: pointer;
     transition: 0.4s;
     background-color: #fff;
+    grid-template-areas: 
+        "image name price"
+        "verified verified verified";
 }
 
 .leaderboard__product.unavailable {
@@ -102,6 +105,7 @@ a {
     width: 100px;
     border-radius: 50%;
     box-shadow: 0 0 0 10px #ebeef3, 0 0 0 22px #f3f4f6;
+    grid-area: image;
 }
 
 .leaderboard__image.unavailable {
@@ -112,6 +116,7 @@ a {
     color: #979cb0;
     font-weight: 600;
     font-size: 18px;
+    grid-area: name;
 }
 
 .leaderboard__price {
@@ -119,6 +124,15 @@ a {
     font-weight: 700;
     font-size: 34px;
     text-align: right;
+    grid-area: price;
+}
+
+.leaderboard__verified {
+    color: #b3b3b3;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: right;
+    grid-area: verified;
 }
 
 .unavailable {

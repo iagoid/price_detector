@@ -6,8 +6,9 @@ from django.db.models import Q
 from .models import Item
 import time
 
-
 def verifyItemsToScraping():
+    print("=========== EXECUTANDO SCRAPING")
+
     minutes = datetime.timedelta(minutes=15)
     fifteen_minutes_ago = datetime.datetime.now().astimezone() - minutes
     items = Item.objects.all().filter(

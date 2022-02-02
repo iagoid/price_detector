@@ -4,6 +4,7 @@ from item.forms import ItemForm
 
 from .models import Item
 from .scraping import verifyItemsToScraping
+from multiprocessing import Process
 
 
 def itemsList(request):
@@ -30,6 +31,7 @@ def itemsList(request):
             }
 
         return render(request, 'items/list.html', context)
+
 
 def deleteItem(request, id):
     task = get_object_or_404(Item, pk=id)
