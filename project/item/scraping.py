@@ -2,9 +2,12 @@ import urllib.request
 import datetime
 from bs4 import BeautifulSoup
 from django.db.models import Q
-
-from .models import Item
+import multiprocessing
 import time
+import django
+django.setup()
+
+from item.models import Item
 
 def verifyItemsToScraping():
     print("=========== EXECUTANDO SCRAPING")
@@ -14,23 +17,30 @@ def verifyItemsToScraping():
     items = Item.objects.all().filter(
         Q(updated_at__lt=(fifteen_minutes_ago)) | Q(name=None))
 
+    process_list = []
     for i in range(len(items)):
+        p =  multiprocessing.Process(target= getSite, args=(items[i], ))
+        p.start()
+        process_list.append(p)
+        time.sleep(0.2)
+    
+    for process in process_list:
+        process.join()
 
-        page = urllib.request.urlopen(items[i].link)
-        soup = BeautifulSoup(page, 'html5lib')
+def getSite(item):
+    page = urllib.request.urlopen(item.link)
+    soup = BeautifulSoup(page, 'html5lib')
 
-        if "kabum.com.br" in items[i].link:
-            items[i].name, items[i].image, items[i].price = scrapingKabum(
-                soup, items[i])
-        elif "pontodonerd.com.br" in items[i].link:
-            items[i].name, items[i].image, items[i].price = scrapingPontoDoNerd(
-                soup, items[i])
-        else:
-            print("Seu link não é de uma loja conhecida")
+    if "kabum.com.br" in item.link:
+        item.name, item.image, item.price = scrapingKabum(
+            soup, item)
+    elif "pontodonerd.com.br" in item.link:
+        item.name, item.image, item.price = scrapingPontoDoNerd(
+            soup, item)
+    else:
+        print("Seu link não é de uma loja conhecida")
 
-        items[i].save()
-        time.sleep(0.5)
-
+    item.save()
 
 def scrapingKabum(soup, item):
     try:
