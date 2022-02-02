@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,18 +10,7 @@ body {
     background-color: #eaeaea;
     display: grid;
     place-items: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-input,
-p {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #221e1e;
-
+    font-family: 'Roboto', sans-serif;
 }
 
 ul {
