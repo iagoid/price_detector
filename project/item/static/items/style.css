@@ -93,6 +93,9 @@ a {
 
 .leaderboard__product.unavailable {
     background-color: #fde6e6;
+    grid-template-areas: 
+        "image name name"
+        "verified verified verified";
 }
 
 .leaderboard__product:hover {
@@ -116,13 +119,15 @@ a {
     color: #979cb0;
     font-weight: 600;
     font-size: 18px;
+    text-align: justify;
+    margin-left: 10px;
     grid-area: name;
 }
 
 .leaderboard__price {
     color: #35d8ac;
     font-weight: 700;
-    font-size: 34px;
+    font-size: 30px;
     text-align: right;
     grid-area: price;
 }
