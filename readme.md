@@ -1,0 +1,1 @@
+Este é um projeto de web scraping realizado utilizando Django, como foi desenvolvido no windows não foi possível usar um sistema de Cron diferente e 100% funcional, então está sendo utilizado o arquivo .bat para executá-lo.
