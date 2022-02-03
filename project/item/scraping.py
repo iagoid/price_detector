@@ -43,16 +43,16 @@ def getSite(item):
 
     if "kabum.com.br" in item.link:
         item.name, item.image, item.price = scrapingKabum(
-            soup, item)
+            soup)
     elif "pontodonerd.com.br" in item.link:
         item.name, item.image, item.price = scrapingPontoDoNerd(
-            soup, item)
+            soup)
     else:
         print("Seu link não é de uma loja conhecida")
 
     item.save()
 
-def scrapingKabum(soup, item):
+def scrapingKabum(soup):
     try:
         name = soup.find('h1', attrs={'itemprop': 'name'}).text.strip()
         image = soup.find(
@@ -69,7 +69,7 @@ def scrapingKabum(soup, item):
             return "Indisponível: " + name, image, 0
 
     except:
-        return "Erro ao encontrar o item ", "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg", 0
+        return errorNotFound()
 
 
 def scrapingPontoDoNerd(soup, item):
@@ -89,4 +89,7 @@ def scrapingPontoDoNerd(soup, item):
             return "Indisponível: " + name, image, 0
 
     except:
+        return errorNotFound()
+
+def errorNotFound():
         return "Erro ao encontrar o item ", "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg", 0

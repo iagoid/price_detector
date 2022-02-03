@@ -4,7 +4,7 @@ from django.contrib import messages
 from item.forms import ItemForm
 
 from .models import Item
-from .scraping import repeaterItemsToScraping, verifyItemsToScraping
+from .scraping import getSite, repeaterItemsToScraping, verifyItemsToScraping
 from multiprocessing import Process
 
 p =  multiprocessing.Process(target= repeaterItemsToScraping)
@@ -15,8 +15,9 @@ def itemsList(request):
         form = ItemForm(request.POST)
 
         if form.is_valid():
-            task = form.save(commit = False)
-            task.save()
+            item = form.save(commit = False)
+            item.save()
+            getSite(item)
             return redirect('/') 
 
     else :
