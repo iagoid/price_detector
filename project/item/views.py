@@ -1,10 +1,13 @@
+from email import message
 import multiprocessing
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from item.forms import ItemForm
+import urllib.request
+from bs4 import BeautifulSoup
 
 from .models import Item
-from .scraping import getSite, repeaterItemsToScraping, verifyItemsToScraping
+from .scraping import getSite, repeaterItemsToScraping, verifyItemsToScraping, verifySite
 from multiprocessing import Process
 
 p =  multiprocessing.Process(target= repeaterItemsToScraping)
@@ -16,9 +19,17 @@ def itemsList(request):
 
         if form.is_valid():
             item = form.save(commit = False)
-            item.save()
-            getSite(item)
-            return redirect('/') 
+            try: 
+                page = urllib.request.urlopen(item.link)
+                soup = BeautifulSoup(page, 'html5lib')
+                verifySite(soup, item)
+                messages.success(request, 'Criado com sucesso.')
+
+                return redirect('/')
+
+            except:
+                messages.error(request, 'A url inválida' + item.link)
+                return redirect('/')
 
     else :
         items = Item.objects.exclude(price=0).order_by('price')
@@ -39,6 +50,5 @@ def deleteItem(request, id):
     task = get_object_or_404(Item, pk=id)
     task.delete()
 
-    messages.info(request, 'Tarefa deletada com sucesso.')
-
+    messages.success(request, 'Deletado com sucesso.')
     return redirect('/')

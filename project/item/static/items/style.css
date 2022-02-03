@@ -54,6 +54,21 @@ a {
     transform: scale(1.1);
 }
 
+.alert {
+    width: 80vw;
+    padding: 15px;
+    color: white;
+    margin-top: 15px;
+    border-radius:  8px;
+}
+
+.alert.error {
+    background-color: #f44336;
+}
+
+.alert.success {
+    background-color: #35d8ac;
+}
 
 .leaderboard__products {
     margin: 25px 0;

@@ -8,6 +8,14 @@
     </form>
 </div>
 
+{% if messages %}
+    {% for message in messages %}
+    <div {% if message.tags %} class="alert {{ message.tags }}"{% endif %}>
+        {{ message }}
+    </div>
+    {% endfor %}
+{% endif %}
+
 <main class="leaderboard__products">
     {% for item in items %}
     <a class="link__item" href="{{ item.link }}" target="_blank" data-identifier="{{ item.id }}">

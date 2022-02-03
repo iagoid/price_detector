@@ -38,18 +38,23 @@ def verifyItemsToScraping():
 
 # Verifica a URL em busca dos sites disponíveis e faz a solicitação para o site
 def getSite(item):
-    page = urllib.request.urlopen(item.link)
-    soup = BeautifulSoup(page, 'html5lib')
+    try:
+        page = urllib.request.urlopen(item.link)
+        soup = BeautifulSoup(page, 'html5lib')
+        verifySite(soup, item)
+        
+    except:
+        print("URL INVÁLIDA")
 
+def verifySite(soup, item):
     if "kabum.com.br" in item.link:
-        item.name, item.image, item.price = scrapingKabum(
-            soup)
+            item.name, item.image, item.price = scrapingKabum(
+                soup)
     elif "pontodonerd.com.br" in item.link:
         item.name, item.image, item.price = scrapingPontoDoNerd(
             soup)
     else:
         print("Seu link não é de uma loja conhecida")
-
     item.save()
 
 def scrapingKabum(soup):

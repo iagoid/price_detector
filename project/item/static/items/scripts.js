@@ -28,3 +28,6 @@ function rightClick(e) {
         }
     }
 }
+
+
+$(".alert").fadeOut(5000)
