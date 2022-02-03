@@ -30,4 +30,6 @@ function rightClick(e) {
 }
 
 
-$(".alert").fadeOut(5000)
+$(".alert").fadeTo(2000 , 1, function() {
+    $(this).animate({right: '-200px', opacity: 0}, 1000)
+});

@@ -28,7 +28,7 @@ def itemsList(request):
                 return redirect('/')
 
             except:
-                messages.error(request, 'A url inválida' + item.link)
+                messages.error(request, 'URL inválida')
                 return redirect('/')
 
     else :

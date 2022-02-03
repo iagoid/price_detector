@@ -55,10 +55,15 @@ a {
 }
 
 .alert {
-    width: 80vw;
+    text-align: justify;
+    display: block;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 300px;
+    flex-wrap: wrap;
     padding: 15px;
     color: white;
-    margin-top: 15px;
     border-radius:  8px;
 }
 
@@ -67,14 +72,12 @@ a {
 }
 
 .alert.success {
-    background-color: #35d8ac;
+    background-color: #23866c;
 }
 
 .leaderboard__products {
     margin: 25px 0;
-    max-width: 80vw;
-    background-color: #fff;
-    border-radius: 12px;
+    width: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 15px;
