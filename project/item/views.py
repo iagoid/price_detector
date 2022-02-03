@@ -1,11 +1,14 @@
+import multiprocessing
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from item.forms import ItemForm
 
 from .models import Item
-from .scraping import verifyItemsToScraping
+from .scraping import repeaterItemsToScraping, verifyItemsToScraping
 from multiprocessing import Process
 
+p =  multiprocessing.Process(target= repeaterItemsToScraping)
+p.start()
 
 def itemsList(request):
     if request.method == 'POST':
@@ -17,8 +20,6 @@ def itemsList(request):
             return redirect('/') 
 
     else :
-        verifyItemsToScraping()
-
         items = Item.objects.exclude(price=0).order_by('price')
         unavailableItems  = Item.objects.filter(price=0)
 

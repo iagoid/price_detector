@@ -9,6 +9,13 @@ django.setup()
 
 from item.models import Item
 
+def repeaterItemsToScraping():
+    while(1):
+        p =  multiprocessing.Process(target= verifyItemsToScraping)
+        p.start()
+        p.join()
+        time.sleep(300)
+
 def verifyItemsToScraping():
     print("=========== EXECUTANDO SCRAPING")
 
@@ -22,7 +29,7 @@ def verifyItemsToScraping():
         p =  multiprocessing.Process(target= getSite, args=(items[i], ))
         p.start()
         process_list.append(p)
-        time.sleep(0.2)
+        time.sleep(0.25)
     
     for process in process_list:
         process.join()
