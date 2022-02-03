@@ -20,8 +20,8 @@
     {% for item in items %}
     <a class="link__item" href="{{ item.link }}" target="_blank" data-identifier="{{ item.id }}">
         <article class="leaderboard__product" data-identifier="{{ item.id }}">
-            <img src="{{ item.image }}" alt="{{ item.name }}" class="leaderboard__image">
-            <span class="leaderboard__name">{{ item.name }}</span>
+            <img src="{{ item.image }}" alt="{{ item.name|truncatechars:90 }}" class="leaderboard__image">
+            <span class="leaderboard__name">{{ item.name|truncatechars:90 }}</span>
             <span class="leaderboard__price">R$: {{ item.price|floatformat:2 }}</span>
             <span class="leaderboard__verified">Verificado: {{ item.updated_at|date:"SHORT_DATETIME_FORMAT" }}</span>
         </article>
@@ -31,8 +31,8 @@
     {% for item in unavailableItems %}
     <a class="link__item" href="{{ item.link }}" target="_blank"  data-identifier="{{ item.id }}">
         <article class="leaderboard__product unavailable"  data-identifier="{{ item.id }}">
-            <img src="{{ item.image }}" alt="{{ item.name }}" class="leaderboard__image unavailable">
-            <span class="leaderboard__name unavailable">{{ item.name }}</span>
+            <img src="{{ item.image }}" alt="{{ item.name|truncatechars:90 }}" class="leaderboard__image unavailable">
+            <span class="leaderboard__name unavailable">{{ item.name|truncatechars:90 }}</span>
             <span class="leaderboard__verified">Verificado: {{ item.updated_at|date:'Y-m-d H:i' }}</span>
         </article>
     </a>
