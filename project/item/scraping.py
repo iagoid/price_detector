@@ -9,6 +9,7 @@ django.setup()
 
 from item.models import Item
 
+# Realiza o loop de chamar a função que faz o webscraping após determinado tempo
 def repeaterItemsToScraping():
     while(1):
         p =  multiprocessing.Process(target= verifyItemsToScraping)
@@ -16,8 +17,9 @@ def repeaterItemsToScraping():
         p.join()
         time.sleep(300)
 
+# Verifica qual item deve ser novamente buscado
 def verifyItemsToScraping():
-    print("=========== EXECUTANDO SCRAPING")
+    print("=========== EXECUTANDO SCRAPING", datetime.datetime.now())
 
     minutes = datetime.timedelta(minutes=15)
     fifteen_minutes_ago = datetime.datetime.now().astimezone() - minutes
@@ -34,6 +36,7 @@ def verifyItemsToScraping():
     for process in process_list:
         process.join()
 
+# Verifica a URL em busca dos sites disponíveis e faz a solicitação para o site
 def getSite(item):
     page = urllib.request.urlopen(item.link)
     soup = BeautifulSoup(page, 'html5lib')
