@@ -44,7 +44,7 @@ def getSite(item):
         verifySite(soup, item)
         
     except:
-        print("URL INVÁLIDA" + item.link)
+        print("URL INVÁLIDA " + item.link)
 
 def verifySite(soup, item):
     if "kabum.com.br" in item.link:
@@ -77,7 +77,7 @@ def scrapingKabum(soup):
         return errorNotFound()
 
 
-def scrapingPontoDoNerd(soup, item):
+def scrapingPontoDoNerd(soup):
     try:
         name = soup.find(
             'h1', attrs={'class': 'nome-produto titulo cor-secundaria'}).text.strip()

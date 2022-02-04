@@ -38,7 +38,7 @@ $(".alert").fadeTo(2000, 1, function () {
 });
 
 
-$(".back__to___top").click(function () {
+$(".back__to__top").click(function () {
     $("html, body").animate({
         scrollTop: 0,
     }, "slow");

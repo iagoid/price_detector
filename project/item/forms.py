@@ -7,6 +7,7 @@ class ItemForm(forms.ModelForm):
         super(ItemForm, self).__init__(*args, **kwargs)
         self.fields['link'].label = ""
 
+    link = forms.URLField(max_length=200, widget=forms.URLInput({ "placeholder": "Cole aqui a URL do seu produto"}))
     class Meta:
         model = Item
         fields = ('link', )
