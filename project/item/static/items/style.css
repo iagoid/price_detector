@@ -194,3 +194,11 @@ a {
     color: #fff;
     transform: scale(1.1);
 }
+
+.back__to___top {
+    padding: 20px;
+    cursor: pointer;
+    color: #b3b3b380;
+    font-size: 36px;
+    margin-bottom: 15px;
+}

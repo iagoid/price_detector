@@ -30,6 +30,17 @@ function rightClick(e) {
 }
 
 
-$(".alert").fadeTo(2000 , 1, function() {
-    $(this).animate({right: '-200px', opacity: 0}, 1000)
+$(".alert").fadeTo(2000, 1, function () {
+    $(this).animate({
+        right: '-200px',
+        opacity: 0
+    }, 1000)
+});
+
+
+$(".back__to___top").click(function () {
+    $("html, body").animate({
+        scrollTop: 0,
+    }, "slow");
+    return false;
 });
