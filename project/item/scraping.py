@@ -44,7 +44,7 @@ def getSite(item):
         verifySite(soup, item)
         
     except:
-        print("URL INVÁLIDA")
+        print("URL INVÁLIDA" + item.link)
 
 def verifySite(soup, item):
     if "kabum.com.br" in item.link:
@@ -71,7 +71,7 @@ def scrapingKabum(soup):
 
         except:
             soup.find('div', attrs={'id': 'formularioProdutoIndisponivel'})
-            return "Indisponível: " + name, image, 0
+            return name, image, 0
 
     except:
         return errorNotFound()
