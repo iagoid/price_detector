@@ -15,16 +15,16 @@ body {
 
 body::-webkit-scrollbar {
     width: 6px;
-  }
-  
-  body::-webkit-scrollbar-track {
+}
+
+body::-webkit-scrollbar-track {
     background-color: #35d8ac;
-  }
-  
-  body::-webkit-scrollbar-thumb {
+}
+
+body::-webkit-scrollbar-thumb {
     background-color: #139e69;
-  }
-  
+}
+
 
 ul {
     list-style: none;
@@ -77,7 +77,7 @@ a {
     flex-wrap: wrap;
     padding: 15px;
     color: white;
-    border-radius:  8px;
+    border-radius: 8px;
 }
 
 .alert.error {
@@ -108,14 +108,14 @@ a {
     cursor: pointer;
     transition: 0.4s;
     background-color: #fff;
-    grid-template-areas: 
+    grid-template-areas:
         "image name price"
         "verified verified verified";
 }
 
 .leaderboard__product.unavailable {
     background-color: #fde6e6;
-    grid-template-areas: 
+    grid-template-areas:
         "image name name"
         "verified verified verified";
 }
@@ -177,7 +177,7 @@ a {
     padding: 10px;
 }
 
-.menu>li>a>h3{
+.menu>li>a>h3 {
     display: flex;
     align-items: center;
     position: relative;
@@ -186,7 +186,7 @@ a {
     color: #e4e1e1;
 }
 
-.menu>li>a>h3>i{
+.menu>li>a>h3>i {
     margin-right: 10px;
 }
 
@@ -198,7 +198,25 @@ a {
 .back__to__top {
     padding: 20px;
     cursor: pointer;
-    color: #b3b3b380;
+    color: #b3b3b3;
     font-size: 36px;
     margin-bottom: 15px;
+    transition: 1s;
+}
+
+.back__to__top:hover {
+    color: #e4e1e1;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #2b2b2b;
+    transform: translateY(-20px);
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back__to__top:hover::after {
+    font-size: 18px;
+    content: "VOLTAR AO TOPO";
+    font-family: 'Roboto', sans-serif;
 }
