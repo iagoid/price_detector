@@ -6,12 +6,21 @@ function hideMenu() {
         .style.display = "none"
 }
 
+var linkIdentifier
+
 function rightClick(e) {
     var x = event.clientX
     var y = event.clientY
     var elementMouseIsOver = document.elementFromPoint(x, y);
-    var parent = $(elementMouseIsOver).parent()
-    var id = parent.data("identifier")
+    var parentMouseIsOver = $(elementMouseIsOver).parent()
+
+    if (parentMouseIsOver.parent('a').length) {
+        linkIdentifier = parentMouseIsOver.parent('a')
+    } else {
+        linkIdentifier = parentMouseIsOver
+    }
+
+    var id = linkIdentifier.data("identifier")
 
     if (id) {
         e.preventDefault();
@@ -38,9 +47,33 @@ $(".alert").fadeTo(2000, 1, function () {
 });
 
 
+$("#delete__link").click(function (e) {
+    e.preventDefault()
+
+    var deleteLink = $("#delete__link")
+    var url = deleteLink.attr('href')
+
+    $.ajax({
+        type: "get",
+        url: url,
+        success: function () {
+            linkIdentifier.fadeOut(1000)
+        }
+    });
+});
+
 $(".back__to__top").click(function () {
+    reload()
     $("html, body").animate({
         scrollTop: 0,
     }, "slow");
-    return false;
 });
+
+function reload() {
+    setTimeout(function () {
+        $('.leaderboard__products').fadeOut(500);
+        $('.icon__back__top').fadeOut(500, function () {
+            location.reload(true);
+        });
+    }, 0);
+}

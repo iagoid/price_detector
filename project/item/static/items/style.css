@@ -111,6 +111,7 @@ a {
     grid-template-areas:
         "image name price"
         "verified verified verified";
+        height: 100%;
 }
 
 .leaderboard__product.unavailable {
