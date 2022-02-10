@@ -1,0 +1,16 @@
+[INFO  - 2022-02-09T18:17:46.343Z] GhostDriver - Main - running on port 62435
+[INFO  - 2022-02-09T18:17:47.030Z] Session [952932e0-89d4-11ec-84e0-d338224b4ea4] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2022-02-09T18:17:47.030Z] Session [952932e0-89d4-11ec-84e0-d338224b4ea4] - page.customHeaders:  - {}
+[INFO  - 2022-02-09T18:17:47.030Z] Session [952932e0-89d4-11ec-84e0-d338224b4ea4] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2022-02-09T18:17:47.030Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 952932e0-89d4-11ec-84e0-d338224b4ea4
+[ERROR - 2022-02-09T18:17:48.190Z] Session [952932e0-89d4-11ec-84e0-d338224b4ea4] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'window.performance.getEntriesByType("navigation")')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-09T18:17:48.190Z] Session [952932e0-89d4-11ec-84e0-d338224b4ea4] - page.onError - stack:
+  setAppInfo (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
+  initialize (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
+  ready (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
+  (anonymous function) (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
+  (anonymous function) (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
+
+  phantomjs://platform/console++.js:263 in error

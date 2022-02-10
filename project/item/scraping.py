@@ -3,11 +3,15 @@ import datetime
 from bs4 import BeautifulSoup
 from django.db.models import Q
 import multiprocessing
+from selenium import webdriver
 import time
 import django
+from django.contrib import messages
+
 django.setup()
 
 from item.models import Item
+from item.stores import scrapingKabum, scrapingDell, scrapingPontoDoNerd
 
 # Realiza o loop de chamar a função que faz o webscraping após determinado tempo
 def repeaterItemsToScraping():
@@ -36,12 +40,28 @@ def verifyItemsToScraping():
     for process in process_list:
         process.join()
 
+# Manda as requisições para o site
+def sendRequestToSite(link):
+    browser = webdriver.PhantomJS(executable_path = '..\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe')
+    browser.get(link)
+    time.sleep(1)
+    page = browser.page_source
+    
+    soup = BeautifulSoup(page, 'html5lib')
+    return soup
+
 # Verifica a URL em busca dos sites disponíveis e faz a solicitação para o site
 def getSite(item):
-    try:
-        page = urllib.request.urlopen(item.link)
-        soup = BeautifulSoup(page, 'html5lib')
-        verifySite(soup, item)
+    try:        
+        soup = sendRequestToSite(item.link)
+        item = verifySite(soup, item)
+        
+        if item.name != None or item.price != None:
+            item.save()
+            print('Criado com sucesso.')
+                    
+        else:
+           print('Erro ao criar', item.url)
         
     except:
         print("URL INVÁLIDA " + item.link)
@@ -53,48 +73,9 @@ def verifySite(soup, item):
     elif "pontodonerd.com.br" in item.link:
         item.name, item.image, item.price = scrapingPontoDoNerd(
             soup)
-    else:
-        print("Seu link não é de uma loja conhecida")
-    item.save()
-
-def scrapingKabum(soup):
-    try:
-        name = soup.find('h1', attrs={'itemprop': 'name'}).text.strip()
-        image = soup.find(
-            'img', attrs={'class': 'iiz__img'}).get("src")
-
-        try:
-            price = soup.find(
-                'h4', attrs={'class': 'finalPrice'}).text.replace(".", "").replace("$", "").replace("R", "").strip()
-            price = float(price.replace(",", "."))
-            return name, image, price
-
-        except:
-            soup.find('div', attrs={'id': 'formularioProdutoIndisponivel'})
-            return name, image, 0
-
-    except:
-        return errorNotFound()
-
-
-def scrapingPontoDoNerd(soup):
-    try:
-        name = soup.find(
-            'h1', attrs={'class': 'nome-produto titulo cor-secundaria'}).text.strip()
-        image = soup.find(
-            'img', attrs={'id': 'imagemProduto'}).get("src")
-
-        try:
-            price = soup.find(
-                'strong', attrs={'class': 'preco-promocional cor-principal'}).text.replace(".", "").replace("$", "").replace("R", "").strip()
-            price = float(price.replace(",", "."))
-            return name, image, price
-
-        except:
-            return "Indisponível: " + name, image, 0
-
-    except:
-        return errorNotFound()
-
-def errorNotFound():
-        return "Erro ao encontrar o item ", "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg", 0
+    elif "dell.com" in item.link:
+        item.name, item.image, item.price = scrapingDell(
+            soup)
+        
+    return item
+    

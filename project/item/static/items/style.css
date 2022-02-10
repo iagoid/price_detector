@@ -89,6 +89,14 @@ a {
     background-color: #23866c;
 }
 
+.alert.warning {
+    background-color: #fbc312;
+}
+
+.alert + .alert {
+    bottom: 100px;
+}
+
 .leaderboard__products {
     margin: 25px 0;
     width: 80%;
@@ -128,6 +136,7 @@ a {
 }
 
 .leaderboard__image {
+    max-height: 125px;
     width: 100px;
     border-radius: 50%;
     box-shadow: 0 0 0 10px #ebeef3, 0 0 0 22px #f3f4f6;

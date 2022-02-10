@@ -39,11 +39,11 @@ function rightClick(e) {
 }
 
 
-$(".alert").fadeTo(2000, 1, function () {
+$(".alert").fadeTo(5000, 1, function () {
     $(this).animate({
         right: '-200px',
         opacity: 0
-    }, 1000)
+    }, 2000)
 });
 
 
