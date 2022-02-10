@@ -1,14 +1,9 @@
-from email import message
 import multiprocessing
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from item.forms import ItemForm
-import urllib.request
-from bs4 import BeautifulSoup
-
 from .models import Item
-from .scraping import getSite, repeaterItemsToScraping, verifyItemsToScraping, verifySite
-from multiprocessing import Process
+from .scraping import  repeaterItemsToScraping, sendRequestToSite, verifySite
 
 p =  multiprocessing.Process(target= repeaterItemsToScraping)
 p.start()
@@ -20,15 +15,25 @@ def itemsList(request):
         if form.is_valid():
             item = form.save(commit = False)
             try: 
-                page = urllib.request.urlopen(item.link)
-                soup = BeautifulSoup(page, 'html5lib')
-                verifySite(soup, item)
-                messages.success(request, 'Criado com sucesso.')
-
+                soup = sendRequestToSite(item.link)
+            except:
+                messages.error(request, 'Erro ao enviar requisição')
+                return redirect('/')    
+            
+            try:
+                item = verifySite(soup, item)
+                
+                if item.price != None:
+                    item.save()
+                    messages.success(request, 'Criado com sucesso.')
+                    
+                else:
+                    messages.error(request, 'Erro ao coletar dados')
+                    
                 return redirect('/')
 
             except:
-                messages.error(request, 'URL inválida')
+                messages.error(request, 'Loja desconhecida')
                 return redirect('/')
 
     else :

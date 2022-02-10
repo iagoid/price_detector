@@ -1,0 +1,52 @@
+[INFO  - 2022-02-10T10:41:03.861Z] GhostDriver - Main - running on port 61195
+[INFO  - 2022-02-10T10:41:04.531Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2022-02-10T10:41:04.531Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.customHeaders:  - {}
+[INFO  - 2022-02-10T10:41:04.531Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2022-02-10T10:41:04.531Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: f26a09f0-8a5d-11ec-8423-cbe06a42e9a1
+[ERROR - 2022-02-10T10:41:05.202Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T10:41:05.203Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - stack:
+  defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  (anonymous function) (https://www.kabum.com.br/404:8)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T10:41:05.243Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T10:41:05.243Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - stack:
+  defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  (anonymous function) (https://static.kabum.com.br/conteudo/js/datadome/body.js:4)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T10:41:05.282Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T10:41:05.282Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - stack:
+  defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  (anonymous function) (https://cdn.pn.vg/sites/7f2d1b38-9526-4c0b-9c7d-cd72d4ff3064.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T10:41:05.302Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T10:41:05.303Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - stack:
+  defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  jsonp (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
+  addBannerSDKScript (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
+  geoLocationJsonCallback (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
+  (anonymous function) (:0)
+  onload (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T10:41:06.296Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - msg: RA-Reputation: bad response from server https://iosite.reclameaqui.com.br/raichu-io-site-v1/company/embed/hash/NzI1NDprYWJ1bQ==
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T10:41:06.296Z] Session [f26a09f0-8a5d-11ec-8423-cbe06a42e9a1] - page.onError - stack:
+  onreadystatechange (https://s3.amazonaws.com/raichu-beta/selos/bundle.js:1)
+
+  phantomjs://platform/console++.js:263 in error
