@@ -62,4 +62,4 @@ def scrapingDell(soup):
         return errorNotFound()
 
 def errorNotFound():
-    return "Erro ao encontrar o item", "https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg", None
+    return None, None, None

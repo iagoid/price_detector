@@ -23,9 +23,13 @@ def itemsList(request):
             try:
                 item = verifySite(soup, item)
                 
+                # Verifica se não foi levado para uma página 404
                 if item.price != None:
                     item.save()
-                    messages.success(request, 'Criado com sucesso.')
+                    messages.success(request, 'Criado com sucesso.')                                   
+                    
+                    if item.price == 0:
+                        messages.warning(request, 'Indísponivel no estoque')               
                     
                 else:
                     messages.error(request, 'Erro ao coletar dados')
