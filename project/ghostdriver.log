@@ -1,61 +1,73 @@
-[INFO  - 2022-02-10T11:24:00.788Z] GhostDriver - Main - running on port 52645
-[INFO  - 2022-02-10T11:24:01.433Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2022-02-10T11:24:01.433Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.customHeaders:  - {}
-[INFO  - 2022-02-10T11:24:01.433Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2022-02-10T11:24:01.433Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: f25e1450-8a63-11ec-b995-93f83516795a
-[ERROR - 2022-02-10T11:24:02.021Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
+[INFO  - 2022-02-10T16:32:26.822Z] GhostDriver - Main - running on port 54157
+[INFO  - 2022-02-10T16:32:27.876Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2022-02-10T16:32:27.877Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - page.customHeaders:  - {}
+[INFO  - 2022-02-10T16:32:27.877Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2022-02-10T16:32:27.877Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 0910b8d0-8a8f-11ec-9032-0ffce2aefd22
+[ERROR - 2022-02-10T16:32:35.376Z] Session [0809f730-8a8f-11ec-ae6d-19cc7603e39f] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'window.performance.getEntriesByType("navigation")')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:02.022Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - stack:
-  defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
-  createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
-  (anonymous function) (https://www.kabum.com.br/produto/217558/camera-dome-ip-intelbras-vip-1130-d-g2-sensor-1-2-7-lente-2-8mm-30m-ir-poe-ip67-h-265-hd-720p:8)
+[ERROR - 2022-02-10T16:32:35.377Z] Session [0809f730-8a8f-11ec-ae6d-19cc7603e39f] - page.onError - stack:
+  setAppInfo (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
+  initialize (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
+  ready (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
+  (anonymous function) (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
+  (anonymous function) (https://afcs.dellcdn.com/boomerang/latest/boomerang-csb-full.min.js:11)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:02.200Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
+js:1)
+  (anonymous function) (https://certificate.trustvox.com.br/widget.js:1)
+  (anonymous function) (https://certificate.trustvox.com.br/widget.js:1)
+  l (https://certificate.trustvox.com.br/widget.js:1)
+  i (https://certificate.trustvox.com.br/widget.js:1)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:02.200Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - stack:
-  defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
-  createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
-  (anonymous function) (https://static.kabum.com.br/conteudo/js/datadome/head.js:3)
+[ERROR - 2022-02-10T16:32:35.971Z] Session [0774e320-8a8f-11ec-b6f9-c92d2ba91f16] - page.onError - msg: ReferenceError: Can't find variable: FMC
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:02.212Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
+[ERROR - 2022-02-10T16:32:35.971Z] Session [0774e320-8a8f-11ec-b6f9-c92d2ba91f16] - page.onError - stack:
+  onload (https://www.pontodonerd.com.br/tv-box-mxq-pro-4k-android-7-1-2gb:3441)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:02.212Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - stack:
+configurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T16:32:28.529Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - page.onError - stack:
   defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
   createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
   (anonymous function) (https://static.kabum.com.br/conteudo/js/datadome/body.js:4)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:02.430Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
+[ERROR - 2022-02-10T16:32:28.550Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:02.430Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - stack:
-  defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
-  createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
-  (anonymous function) (https://cdn.pn.vg/sites/7f2d1b38-9526-4c0b-9c7d-cd72d4ff3064.js:1)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:02.659Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:02.659Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - stack:
+[ERROR - 2022-02-10T16:32:28.551Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - page.onError - stack:
   defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
   createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
   jsonp (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
-  addBannerSDKScript (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
-  geoLocationJsonCallback (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
+  getGeoLocation (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
+  getLocation (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
   (anonymous function) (:0)
   onload (https://cdn.cookielaw.org/scripttemplates/otSDKStub.js:1)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:03.048Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - msg: RA-Reputation: bad response from server https://iosite.reclameaqui.com.br/raichu-io-site-v1/company/embed/hash/NzI1NDprYWJ1bQ==
+[ERROR - 2022-02-10T16:32:28.638Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - page.onError - msg: TypeError: Attempting to change access mechanism for an unconfigurable property.
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2022-02-10T11:24:03.049Z] Session [f25e1450-8a63-11ec-b995-93f83516795a] - page.onError - stack:
+[ERROR - 2022-02-10T16:32:28.638Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - page.onError - stack:
+  defineProperties (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  createElement (https://cdn.cookielaw.org/consent/f2620729-44b9-4680-b58d-990c0d86bc10/OtAutoBlock.js:7)
+  (anonymous function) (https://cdn.pn.vg/sites/7f2d1b38-9526-4c0b-9c7d-cd72d4ff3064.js:1)
+
+  phantomjs://plat[ERROR - 2022-02-10T16:32:28.722[ERROR - 2022-02-10T16:32:29.353Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - page.onError - msg: RA-Reputation: bad response from server https://iosite.reclameaqui.com.br/raichu-io-site-v1/company/embed/hash/NzI1NDprYWJ1bQ==
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T16:32:29.353Z] Session [0910b8d0-8a8f-11ec-9032-0ffce2aefd22] - page.onError - stack:
   onreadystatechange (https://s3.amazonaws.com/raichu-beta/selos/bundle.js:1)
+
+  phantomjs://platform/console++.js:263 in err[ERROR - 2022-02-10T16:32:32.190Z] Session [07e11270-8a8f-11ec-9c74-cfffa8f40424] - page.onError - msg: TypeError: null is not an object (evaluating 'document.getElementById('video1').play')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2022-02-10T16:32:32.190Z] Session [07e11270-8a8f-11ec-9c74-cfffa8f40424] - page.onError - stack:
+  global code (https://www.kabum.com.br/conteudo/descricao/110142/js/main.js:1)
 
   phantomjs://platform/console++.js:263 in error

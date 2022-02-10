@@ -42,7 +42,7 @@ def verifyItemsToScraping():
 
 # Manda as requisições para o site
 def sendRequestToSite(link):
-    browser = webdriver.PhantomJS(executable_path = 'C:\\Users\\admin\\Downloads\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe')
+    browser = webdriver.PhantomJS(executable_path = '..\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe')
     browser.get(link)
     time.sleep(1)
     page = browser.page_source
